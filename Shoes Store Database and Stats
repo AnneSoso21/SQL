@@ -1,0 +1,51 @@
+/** Create a shoe store datebase:
+Sneakers 
+Thigh High Boots 
+Cowyboy Boots
+Booties
+High Heels
+Low Heels
+Wrap Ups
+Sandals
+Mules 
+Loafers
+Platforms Shoes
+Flat shoes
+Slippers
+Wedges
+Vacation Shoes 
+**/
+
+CREATE TABLE ann_shoes (id INTEGER PRIMARY KEY, item TEXT,branch TEXT, size NUMERIC,  color TEXT, price NUMERIC, popularity INTEGER);
+
+INSERT INTO ann_shoes VALUES (1, "Sneakers", "Nike", "7", "Black", "69.99", "50");
+INSERT INTO ann_shoes VALUES (2, "Thigh High Boots", "Fashion Nova", "8", "Gold", "99.99", "42");
+INSERT INTO ann_shoes VALUES (3, "Cowyboy Boots","Aldo", "8.5", "Black", "89.99", "20");
+INSERT INTO ann_shoes VALUES (4, "Booties","Fashion Nova", "9", "Pink", "79.99", "30");
+INSERT INTO ann_shoes VALUES (5, "High Heels","Aldo", "8", "Brown", "67.45", "35");
+INSERT INTO ann_shoes VALUES (6, "Low Heels","Zara" , "7", "Pink", "65.89", "60");
+INSERT INTO ann_shoes VALUES (7, "Wrap Ups","Fashion Nova" , "8", "Purple", "55", "5");
+INSERT INTO ann_shoes VALUES (8, "Sandals","Zara" , "9", "Navy blue", "16.65", "70");
+INSERT INTO ann_shoes VALUES (9, "Mules","Aldo" , "7", "Black", "19.99", "25");
+INSERT INTO ann_shoes VALUES (10, "Loafers","Fashion Nova", "8", "Black", "18.75", "10");
+INSERT INTO ann_shoes VALUES (11, "Platforms Shoes","Zara", "6", "Pink", "25.89", "65");
+INSERT INTO ann_shoes VALUES (12, "Flat Shoes","Asos" , "6", "Purple", "27.96", "37");
+INSERT INTO ann_shoes VALUES (13, "Slippers","Nike" , "8", "Red", "36.99", "75");
+INSERT INTO ann_shoes VALUES (14, "Wedges","Asos" , "7", "Yellow", "38.98", "5");
+INSERT INTO ann_shoes VALUES (15, "Vacation Shoes","Asos" , "8", "Gold","29.99", "90");
+
+--display the database ordered by price.
+SELECT item,price FROM ann_shoes 
+ORDER BY price asc;
+
+--What is the avg price of shoes in black color?
+SELECT AVG(price) "Avg black shoes price" 
+FROM ann_shoes 
+WHERE color = "Black" ;
+
+--What are the 5 popular items?
+SELECT item, price, popularity
+FROM ann_shoes
+ORDER BY popularity desc
+LIMIT 5;
+
