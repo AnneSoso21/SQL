@@ -1,5 +1,6 @@
+# In this SQL code, I'm querying a database that's holding Chinook data to perform analytics on the data.
 
-#1. Show Customers (their full names, customer ID, and country) who are not in the US. (Hint: != or <> can be used to say "is not equal to").
+#1. Show Customers (their full names, customer ID, and country) who are not in the US.
 SELECT FirstName, LastName, CustomerId, Country 
 FROM chinook.customers 
 WHERE Country != "USA";
